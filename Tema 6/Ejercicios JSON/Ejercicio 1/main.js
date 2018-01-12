@@ -3,9 +3,9 @@ $(document).ready(function () {
     
     $('#mostrar').click(function () {
         
-        var nombre = lista['nombre'];
-        var edad = lista['edad'];
-        var profesion = lista['profesion'];
+        var nombre = lista[0]['nombre'];
+        var edad = lista[0]['edad'];
+        var profesion = lista[0]['profesion'];
         
         if (compruebaNombre() && compruebaEdad && compruebaProfesion) {
             alert("Aceptado");
