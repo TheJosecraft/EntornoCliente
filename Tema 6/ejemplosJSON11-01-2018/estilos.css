@@ -1,0 +1,30 @@
+div#info
+{
+    border:2px solid blue;
+    position: absolute;
+    left:30%;
+    top:20%;
+    width:400px;
+    height: 300px;
+    text-align: center;
+}
+
+#boton{
+    position: absolute;
+    left:35%;
+    top:70%;
+    width:200px;
+    
+}
+.verde{
+    background-color: green;
+}
+
+.rojo{
+    background-color: tomato;
+}
+
+.letra{
+    color:blue;
+    font-weight: bold;
+}

@@ -1,0 +1,31 @@
+div#info
+{
+    border:2px solid red;
+    position: absolute;
+    left:30%;
+    top:30%;
+    width:400px;
+    height: 300px;
+}
+
+span#info{
+	border:2px solid black;
+}
+
+form{
+	display:inline-block;
+	text-align: center;
+	width:100%;
+}
+
+
+.rojo
+{
+    background-color: tomato;
+}
+
+.blanco
+{
+    background-color: white;
+}
+

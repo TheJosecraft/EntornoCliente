@@ -1,0 +1,11 @@
+REPASO RECORRIDO de DATOS TYPEOF
+A MANO cogiendo en varios prompt nombre apellidos edad 
+viendo como acceder
+parse y 
+stringify
+DESPUES CON SPLIT
+DESPUES CON UN FORMULARIO
+
+ejemplo json
+http://www.resultados-futbol.com/api
+https://developer.marvel.com/docs

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: ledbdrev;
+    src: url(./ledbdrev.ttf);
+}
+/* aqui va el estilo que tendra el reloj */
+#reloj{
+    font-family: ledbdrev;
+    background: #000000;
+    color: #FFFFFF;
+    font-size: 100px;
+    display: inline-block; 
+}

@@ -1,0 +1,25 @@
+div#info
+{
+    border:2px solid red;
+    position: absolute;
+    left:30%;
+    top:30%;
+    width:400px;
+    height: 300px;
+}
+
+div#caracteres
+{
+    
+    width:50%;
+    margin-top:5px;    
+    margin-bottom:5px;
+}
+
+.rojo
+{
+	color:red;
+}
+
+
+

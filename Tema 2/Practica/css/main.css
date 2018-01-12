@@ -1,0 +1,95 @@
+h1.titulo {
+    text-align: center;
+}
+
+img.foto {
+    width: 200px;
+    height: 200px;
+}
+
+div{
+    display: block;
+    padding-left: 30px;
+    position: relative;
+}
+
+div.main{
+    justify-content: center;
+}
+
+div .datos, .formacion, .experiencia, .formulario{
+    width: 40%;
+    float: left;
+    min-height:400px;
+    border: 1px solid;
+    border-spacing: 10px;
+    border-collapse: separate;
+    margin: 10px;
+
+}
+
+h2 {
+    text-align: left;
+}
+
+body {
+    font-family: 'Mukta', sans-serif;
+    margin: 0;
+    padding-top: 0px;
+    background-color: lightgrey;
+}
+
+table tr.fila1 {
+    background-color: palegreen;
+}
+
+table {
+    border-radius: 5px;
+}
+
+table td {
+    text-align: center;
+    min-width: 80px;
+    padding: 10px;
+}
+
+input[type=text] {
+    height: 20px;
+    margin-bottom: 10px;
+    border-radius: 40px;
+    border: 1px solid green;
+    font-size: 13px;
+    font-weight: 100;
+    padding: 10px 15px
+}
+
+input[type=text]:focus {
+    background-color: palegreen;
+}
+
+textarea {
+    border: 1px solid green;
+    border-radius: 20px;
+    width: 190px;
+    height: 100px;
+    font-weight: 100;
+    font-size: 13px;
+    padding: 10px;
+}
+
+textarea:focus {
+    background-color: palegreen;
+}
+
+input[type=submit] {
+    background-color: palegreen;
+    border: 1px solid palegreen;
+    font-size: 16px;
+}
+
+h1,
+h2 {
+    color: forestgreen;
+    font-weight: 400;
+}
+

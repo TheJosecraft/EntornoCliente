@@ -1,0 +1,17 @@
+.error_input
+{
+    background-color:red; 
+}
+
+.error_span
+{
+	color:red;
+	display: inline-block;
+}
+
+
+.ok_span
+{
+	color:green;
+	display:inline-block;
+}

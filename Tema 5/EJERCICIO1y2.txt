@@ -1,0 +1,6 @@
+TODOS LOS EVENTOS
+https://www.w3schools.com/jsref/dom_obj_event.asp
+DOBLE CLICK
+BOTON DERECHO
+MOUSEENTER
+MOUSELEAVE
