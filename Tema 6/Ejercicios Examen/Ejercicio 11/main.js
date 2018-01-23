@@ -1,10 +1,12 @@
-//Partiendo del ejercicio 9, además de crearlas y añadirlas al body asignar los
-//siguientes eventos a cada caja:
-// Cuando se haga clic en una caja sumarle 5 al número que contiene.
-// Cuando el ratón entre en una caja restarle 2 al número que contiene.
-// El número que contiene la caja nunca podrá ser negativo o superar 300.
-// En caso de que no se cumpla los anterior no modificar el número y mostrar
-//un alert de aviso.
+//Partiendo del ejercicio 10, añadir los siguientes eventos:
+// Cuando se haga doble clic en alguna casilla cambiar el valor que tiene
+//dicha casilla por el contenido de un input type text que se encuentra al lado
+//con un texto explicativo.
+// El contenido del input tiene que ser un numero entre 100 y 300.
+// En caso de que no se cumpla avisar con un alert.
+// Al pulsar el botón derecho (contextmenu) sobre alguna caja cambiar el
+//número a 0. Evitar que se muestre el menú contextual al pulsar el botón
+//derecho.
 $(document).ready(function () {
 
     for (var i = 16; i <= 255; i++) {
