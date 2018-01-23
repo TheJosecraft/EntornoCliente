@@ -8,7 +8,33 @@
 $(document).ready(function(){
     
     for(var i = 16; i <= 255; i++){
+        
         $("body").append("<div id=caja" + i + ">" + i + "</div>");
+        $("#caja" + i).click(Clic).hover(Hover);
+        
+    }
+    
+    function Clic(){
+        var numero = $(this).text();
+        
+        numero = parseInt(numero);
+        
+        $(this).text(numero + 5);
+        
+        console.log(numero + " + 5" + " = " + (numero + 5));
+    }
+    
+    function Hover(){
+        
+        var numero = $(this).text();
+        
+        numero = parseInt(numero);
+        
+        $(this).text(numero - 2);
+        
+        console.log($(this).text());
+        
+        console.log(numero + " - 2" + " = " + (numero - 2));
     }
     
 });
