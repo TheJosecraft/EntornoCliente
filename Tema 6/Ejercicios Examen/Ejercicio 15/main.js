@@ -17,7 +17,7 @@ $(document).ready(function () {
     }
     $("body").append("</table>");
 
-    var celdas = $("#tabla tr td");
+    var celdas = $("td");
     
     for(var i = 0; i <= celdas.length; i++){
         var red = Math.floor(Math.random() * (255 - 0));
@@ -25,7 +25,7 @@ $(document).ready(function () {
         var blue = Math.floor(Math.random() * (255 - 0));
         console.log("rgb(" + red + ", " + green + ", " + blue + ")")
         
-        celdas[i].css("background-color", "rgb(" + red + ", " + green + ", " + blue + ")");
+        celdas.eq(i).css("background-color", "rgb(" + red + ", " + green + ", " + blue + ")");
     }
 
 });
