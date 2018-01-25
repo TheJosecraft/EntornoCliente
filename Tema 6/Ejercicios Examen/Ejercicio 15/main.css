@@ -1,0 +1,16 @@
+#tabla td{
+    width: 15px;
+    height: 15px;
+}
+
+#tabla, #tabla td{
+    border: 1px solid;
+}
+
+.rojo{
+    background-color: red;
+}
+
+.amarillo{
+    background-color: yellow;
+}
