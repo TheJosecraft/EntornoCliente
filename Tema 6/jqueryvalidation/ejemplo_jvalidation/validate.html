@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery validation plug-in - main demo</title>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="jquery.validate.min.js"></script>
+<script type="text/javascript" src="validate.js"></script>
+<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+
+<div id="main">
+
+
+<form class="cmxform" id="registro" method="post" action=""> 
+<fieldset>
+<legend>Validating a complete form</legend>
+<p>
+<label for="firstname">Firstname</label>
+<input id="firstname" name="nombre" type="text">
+</p>
+<p>
+<label for="lastname">Lastname</label>
+<input id="lastname"  name="apellidos" type="text">
+
+</p>
+<p>
+<label for="username">Username</label>
+<input id="username" name="usuario" type="text">
+</p>
+<p>
+<label for="password">Password</label>
+<input id="password" name="password" type="password">
+</p>
+<p>
+<label for="confirm_password">Confirm password</label>
+<input id="confirm_password" name="re_password" type="password">
+</p>
+<p>
+<label for="email">Email</label>
+<input id="email" name="email" type="email">
+</p>
+<p>
+<label for="agree">Please agree to our policy</label>
+<input type="checkbox" class="checkbox" id="deacuerdo" name="deacuerdo">
+</p>
+<p>
+<label for="newsletter">I'd like to receive the newsletter</label>
+<input type="checkbox" class="checkbox" id="lista" name="lista">
+</p>
+<fieldset id="newsletter_topics">
+<legend>Topics (select at least two) - note: would be hidden when newsletter isn't selected, but is visible here for the demo</legend>
+<label for="topic_marketflash">
+<input type="checkbox" id="topic_marketflash" value="marketflash" name="tema">Marketflash
+</label>
+<label for="topic_fuzz">
+<input type="checkbox" id="topic_fuzz" value="fuzz" name="tema">Latest fuzz
+</label>
+<label for="topic_digester">
+<input type="checkbox" id="topic_digester" value="digester" name="tema">Mailing list digester
+</label>
+
+</fieldset>
+<p>
+<input class="submit" type="submit" value="Submit">
+</p>
+</fieldset>
+</form>
+
+</div>
+</body>
+</html>
