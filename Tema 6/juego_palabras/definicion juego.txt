@@ -1,0 +1,21 @@
+partiendo de lo que ya tenemos, que permite crear la tabla aleatoria de 
+definiciones hay que conseguir programar el siguiente juego:
+
+-El objetivo es ganar las monedas que estan repartidas en la tabla
+-En la tabla de 3x3 hay 3 monedas que se situan de manera aleatoria
+-Teneis que buscar un archivo de imagen para que cuando se acierte una
+casilla que tiene una moneda aparezca en verde y con la moneda
+
+-Se puede fallar una vez y entonces la casilla se pondra de color naranja
+-Si se falla otra vez la casilla se pone de color rojo y no se puede intentar acertar de nuevo
+-Si esto ultimo ocurre y en la casilla hay una moneda acaba el juego
+-Si se acierta se pone en verde aunque haya una moneda y se contabiliza el acierto
+no se puede intentar de nuevo una casilla acertada.
+
+-Cada casilla sin moneda acertada son 5 puntos, cada fallo resta 3 puntos.
+-Las monedas no suben ni bajan puntuacion, pero si no las conseguimos perdemos todo.
+
+Una vez que lo anterior funcione
+-Se tiene un tiempo limite. Deshabilitando el juego.
+-Se pueden establecer niveles de dificultad:
+-Añadiendo más preguntas o haciendo que el tiempo sea mas corto.
