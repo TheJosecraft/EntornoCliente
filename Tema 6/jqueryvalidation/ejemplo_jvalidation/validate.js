@@ -1,5 +1,14 @@
 $(document).ready(Inicio);
 
+var empiezaletra = /^[a-zA-Z][a-z0-9_-]*$/;
+var CIF = /^[a-zA-Z]{1}\d{7}[a-zA-Z0-9]{1}$/;
+var codigo_postal = /^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$/;
+var VISA = /^4[0-9]{3}-?[0-9]{4}-?[0-9]{4}-?[0-9]{4}$/;
+var MASTERCARD = /^5[1-5][0-9]{2}-?[0-9]{4}-?[0-9]{4}-?[0-9]{4}$/;
+var DNI = /^\d{8}[a-zA-Z]{1}$/;
+var imageRegex = /([^\s]+(?=\.(jpg|gif|png))\.\2)/gm;
+
+
 function EsValido(form)
 {
    alert("Es valido siga adelante");
