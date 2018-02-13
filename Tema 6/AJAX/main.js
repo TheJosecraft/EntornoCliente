@@ -1,20 +1,20 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-	$(document).ajaxStart(function(){
+    $(document).ajaxStart(function() {
 
-	}).ajaxStop(function(){
-		
-	})
+    }).ajaxStop(function() {
 
-	$("p a").click(function(event){
-		event.preventDefault();
-		var url = $(this).attr("href");
-		console.log(url);
-		$.get(url, AjaxGet);
-	})
+    })
+
+    $("p a").click(function(event) {
+        event.preventDefault();
+        var url = $(this).attr("href");
+        console.log(url);
+        $.get(url, AjaxGet);
+    })
 
 });
 
-function AjaxGet(datos){
-	$("#info").html(datos);
+function AjaxGet(datos) {
+    $("#info").html(datos);
 }

@@ -2,7 +2,7 @@ $.validator.addMethod("dni", dni, "El dni no es correcto")
 
 $.validator.addMethod("imagen", imagen, "La imagen que ha introducido no es correcta");
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     var obligatorio = "Este campo es obligatorio";
     var igual = "Los campos no coinciden";
@@ -45,12 +45,12 @@ $(document).ready(function () {
                 required: true,
                 dni: true
             },
-            blog:{
-                required:false,
-                url:true
+            blog: {
+                required: false,
+                url: true
             },
-            foto:{
-                imagen:true
+            foto: {
+                imagen: true
             }
 
         },
@@ -81,11 +81,11 @@ $(document).ready(function () {
                 minlength: longitud(5, "min"),
                 equalTo: igual
             },
-            dni:{
-                required:obligatorio
+            dni: {
+                required: obligatorio
             },
-            blog:{
-                url:"Introduce una url correcta"
+            blog: {
+                url: "Introduce una url correcta"
             }
         }
     });
@@ -122,7 +122,7 @@ function dni(valor, elemento) {
     }
 }
 
-function imagen(valor, elemento){
+function imagen(valor, elemento) {
     var imageRegex = /([^\s]+(?=\(jpg|gif|png))\.\2)/;
 
     return valor.match(imageRegex);
