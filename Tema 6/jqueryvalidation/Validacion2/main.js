@@ -1,4 +1,11 @@
-$.validator.addMethod("dni", dni, "El dni no es correcto")
+$.validator.addMethod("dni", dni, "El dni no es correcto");
+$.validator.addMethod("nombre", nombre, "El nombre no es correcto");
+$.validator.addMethod("direccion", direccion, "La dirección no es correcta");
+$.validator.addMethod("puerta", puerta, "La puerta sólo puede contener una letra");
+$.validator.addMethod("cp", cp, "El código postal no es correcto");
+$.validator.addMethod("tel1", tel1, "El teléfono no es correcto");
+$.validator.addMethod("tel2", tel2, "El teléfono no es correcto");
+$.validator.addMethod("cupon", cupon, "El cupón no es correcto");
 
 $.validator.addMethod("imagen", imagen, "La imagen que ha introducido no es correcta");
 
@@ -14,79 +21,108 @@ $(document).ready(function () {
         rules: {
             nombre: {
                 required: true,
-                minlength: 4,
-                maxlength: 20
+                nombre: true
             },
             apellidos: {
                 required: true,
                 minlength: 10,
                 maxlength: 30
             },
-            nacimiento: {
-                required: false
-            },
-            correo1: {
-                required: true
-            },
-            correo2: {
+            direccion: {
                 required: true,
-                equalTo: "#correo1"
+                direccion: true
             },
-            clave: {
+            numero: {
                 required: true,
-                minlength: 5
+                range: [1, 100]
             },
-            repite: {
+            puerta: {
+                puerta: true
+            },
+            cp: {
                 required: true,
-                minlength: 5,
-                equalTo: "#clave"
+                cp: true
             },
-            dni: {
+            tel1: {
                 required: true,
-                dni: true
+                tel1: true,
+                digits: true,
+                minlength: 9,
+                maxlength: 9
             },
-            blog:{
-                required:false,
-                url:true
+            tel2: {
+                tel2: true,
+                digits: true,
+                minlength: 9,
+                maxlength: 9
             },
-            foto:{
-                imagen:true
+            correo: {
+                required: true,
+                email: true
+            },
+            tarjeta: {
+                required: true,
+                creditcard: true
+            },
+            financiar: {
+                required: true,
+                range: [1, 100]
+            },
+            cupon: {
+                cupon: true
+            },
+            producto:{
+                required: true,
+                minlength: 3
             }
 
         },
         messages: {
             nombre: {
-                required: obligatorio,
-                minlength: longitud(4, "min"),
-                maxlength: longitud(20, "max")
+                required: obligatorio
+
             },
             apellidos: {
-                required: obligatorio,
-                minlength: longitud(10, "min"),
-                maxlength: longitud(30, "max")
-            },
-            correo1: {
                 required: obligatorio
             },
-            correo2: {
+            direccion: {
                 required: obligatorio,
-                equalTo: igual
+                direccion: true
             },
-            clave: {
+            numero: {
                 required: obligatorio,
-                minlength: longitud(5, "min")
+                range: "El número tiene que estar entre 1 y 100"
             },
-            repite: {
+            cp: {
                 required: obligatorio,
-                minlength: longitud(5, "min"),
-                equalTo: igual
             },
-            dni:{
-                required:obligatorio
+            tel1: {
+                required: obligatorio,
+                digits: true,
+                minlength: 9,
+                maxlength: 9
             },
-            blog:{
-                url:"Introduce una url correcta"
+            tel2: {
+                digits: true,
+                minlength: 9,
+                maxlength: 9
+            },
+            correo: {
+                required: obligatorio,
+                email: "Lo que ha introducido no es un correo válido"
+            },
+            tarjeta: {
+                required: obligatorio
+            },
+            financiar: {
+                required: obligatorio,
+                range: "El número tiene que estar entre 1 y 100"
+            },
+            producto:{
+                required: obligatorio,
+                minlength: "Por favor, escoge al menos 3 productos"
             }
+            
         }
     });
 
@@ -101,30 +137,72 @@ function longitud(numero, extremo) {
     }
 }
 
-function dni(valor, elemento) {
-    var DNI = /^\d{8}[a-zA-Z]{1}$/;
-    var numero = valor.substr(0, valor.length - 1);
-    var letra = valor.substr(valor.length - 1, 1);
-    var letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
-    console.log(numero);
-    console.log(letra);
-    numero = numero % 23;
-    letras = letras.substring(numero, numero + 1);
-
-    if (valor.match(DNI)) {
-        if (letras != letra.toUpperCase()) {
-            return false;
-        } else {
-            return true;
-        }
-    } else {
-        return valor.match(DNI);
+function nombre(valor, elemento){
+    var nombre = /^\D{4,20}$/;
+    if(valor.match(nombre)){
+        return true;
+    }else{
+        return false;
     }
 }
 
-function imagen(valor, elemento){
-    var imageRegex = /([^\s]+(?=\(jpg|gif|png))\.\2)/;
-
-    return valor.match(imageRegex);
-
+function direccion(valor, elemento){
+    var direccion = /^[a-zA-Z\s]*$/;
+    if(valor.match(direccion)){
+        return true;
+    }else{
+        return false;
+    }
 }
+
+function puerta(valor, elemento){
+    var puerta = /^[a-zA-Z]$/;
+    if(valor.match(puerta)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function cp(valor, elemento){
+    var cp = /^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$/;
+    if(valor.match(cp)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function tel1(valor, elemento){
+    var tel1 = /^[6|9]+[0-9]{8}$/;
+    if(valor.match(tel1)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function tel2(valor, elemento){
+    var tel2 = /^[6|9]+[0-9]{8}$/;
+    if(valor != ""){
+        if(valor.match(tel2)){
+                return true;
+        }else{
+            return false;
+        }
+    }else{
+        return true;
+    }
+    
+}
+
+function cupon(valor, elemento){
+    var cupon = /^[A-Z0-9]{5}$/;
+    if(valor.match(cupon)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
