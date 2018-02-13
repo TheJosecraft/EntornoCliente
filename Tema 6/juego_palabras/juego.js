@@ -57,6 +57,7 @@ var base_juego = [{
 ];
 
 var tablero_json = [];
+var puntuacion = 0;
 
 function Inicio() {
     var fila;
@@ -101,7 +102,10 @@ function Mostrar() {
                 respuesta = prompt(tablero_json[i]["definicion"]);
                 if (respuesta == tablero_json[i]["palabra"]) {
                     alert("Biennnn");
-                    tablero_json[i]["estado"] = 0;
+                    tablero_json[i]["estado"] = 3;
+                    $(this).addClass("correcto");
+                    puntuacion = puntuacion + 5;
+                    $("#puntuacion").text("Puntuación: " + puntuacion);
                 } else {
                     alert("Mallll");
                     tablero_json[i]["estado"]++;
@@ -110,6 +114,9 @@ function Mostrar() {
                     } else if (tablero_json[i]["estado"] == 2) {
                         $(this).addClass("pierde").removeClass("peligro");
                     }
+
+                    puntuacion = puntuacion - 3;
+                    $("#puntuacion").text("Puntuación: " + puntuacion);
                 }
             }
         }

@@ -15,3 +15,7 @@ padding: 10px;
 .pierde{
 	background-color: red;
 }
+
+.correcto{
+	background-color: palegreen;
+}
