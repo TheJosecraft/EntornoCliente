@@ -5,7 +5,7 @@ table{
 
 td{
 border:1px solid;
-padding: 10px;	
+padding: 20px;	
 }
 
 .peligro{
@@ -18,4 +18,12 @@ padding: 10px;
 
 .correcto{
 	background-color: palegreen;
+}
+
+.moneda{
+	background-color: palegreen;
+	background-image: url(coin.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
 }

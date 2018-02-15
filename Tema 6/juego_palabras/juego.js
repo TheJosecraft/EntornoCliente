@@ -58,6 +58,7 @@ var base_juego = [{
 
 var tablero_json = [];
 var puntuacion = 0;
+var contadorMonedas = 0;
 
 function Inicio() {
     var fila;
@@ -65,8 +66,24 @@ function Inicio() {
     var celda;
     var palabra_aleatoria;
     var utilizadas = [];
+    var monedas = [];
 
     var contador = 1;
+    var asigMonedas = 0;
+
+    $("#jugar").click(function() {
+        location.reload();
+    });
+
+    do {
+
+        var aleatorio = Math.floor(Math.random() * base_juego.length + 1);
+        if (monedas.indexOf(aleatorio) == -1) {
+            monedas[asigMonedas] = aleatorio;
+            asigMonedas++;
+        }
+
+    } while (asigMonedas < 3)
 
     for (var i = 1; i <= 3; i++) {
         fila = $("<tr></tr>");
@@ -81,14 +98,18 @@ function Inicio() {
             json_celda["palabra"] = base_juego[posicion]["palabra"];
             json_celda["definicion"] = base_juego[posicion]["definicion"];
             json_celda["estado"] = base_juego[posicion]["estado"];
-            json_celda["moneda"] = base_juego[posicion]["moneda"];
+            if (monedas.indexOf(contador) != -1) {
+                json_celda["moneda"] = 1;
+            } else {
+                json_celda["moneda"] = base_juego[posicion]["moneda"];
+            }
+
             tablero_json.push(json_celda);
             contador++;
         }
         tabla.append(fila);
     }
 
-    console.log(json_celda);
 
     $("body").append(tabla);
 }
@@ -101,18 +122,34 @@ function Mostrar() {
             if (tablero_json[i]["estado"] < 2) {
                 respuesta = prompt(tablero_json[i]["definicion"]);
                 if (respuesta == tablero_json[i]["palabra"]) {
-                    alert("Biennnn");
                     tablero_json[i]["estado"] = 3;
-                    $(this).addClass("correcto");
+                    if (tablero_json[i]["moneda"] == 1) {
+                        $(this).addClass("moneda");
+                        $(this).text("");
+                        contadorMonedas++;
+                    } else {
+                        $(this).addClass("correcto");
+                    }
+
+                    if (contadorMonedas == 3) {
+                        $("td").off();
+                        $("#resultado").text("¡HAS GANADO!");
+                        $("#jugar").css("display", "block");
+                    }
+
                     puntuacion = puntuacion + 5;
                     $("#puntuacion").text("Puntuación: " + puntuacion);
                 } else {
-                    alert("Mallll");
                     tablero_json[i]["estado"]++;
                     if (tablero_json[i]["estado"] == 1) {
                         $(this).addClass("peligro");
                     } else if (tablero_json[i]["estado"] == 2) {
                         $(this).addClass("pierde").removeClass("peligro");
+                        if (tablero_json[i]["moneda"] == 1) {
+                            $("td").off();
+                            $("#resultado").text("¡HAS PERDIDO!");
+                            $("#jugar").css("display", "block");
+                        }
                     }
 
                     puntuacion = puntuacion - 3;
@@ -121,7 +158,6 @@ function Mostrar() {
             }
         }
     }
-    console.log(tablero_json);
 }
 
 function CogeAleatoria(juego, utilizadas) {
