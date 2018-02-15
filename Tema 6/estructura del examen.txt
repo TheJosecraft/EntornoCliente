@@ -1,0 +1,7 @@
+1) Manejar JSON como en los ejercicio 1 y 2 de la practica de JSON
+2) Una lista añadir y quitar elementos al final al principio
+   con eventos y con todo lo que hemos visto en clase.
+3) Crear una tabla con table o con divs con numeros colores y eventos
+4) Validar un formulario simple con JValidation
+
+2,5 Puntos cada ejercicio
