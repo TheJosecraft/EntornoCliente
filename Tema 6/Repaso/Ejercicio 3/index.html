@@ -1,0 +1,36 @@
+<!-- A partir del fichero ejercicio2.html se quiere añadir mediante JavaScript nuevos
+elementos a la lista con id “lista” inicialmente vacía. Para esto se creará una
+función que se ejecute al pulsa el botón del formulario que está en dicha página y
+lo añada al final de la lista. Además, cada elemento que se añada a la lista se
+podrá borra haciendo doble clic sobre él.
+
+Partiendo del ejercicio anterior realizar lo mismo pero que pregunte el elemento a
+añadir al pulsar un botón. El dato se pedirá igualmente por un prompt, además
+también pedirá la posición (partiendo de 1) donde se quiere que se añada.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+	<script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+	<div>
+		<h1>Lista</h1>
+		<ul id="lista">
+			
+		</ul>
+	</div>
+	<div>
+		<label>Elemento</label>
+		<input type="text" name="elemento" id="datos">
+		<br>
+		<label>Posición</label>
+		<input type="text" name="pos" id="pos">
+		<br>
+		<input type="submit" name="enviar" id="enviar">
+	</div>
+</body>
+</html>
