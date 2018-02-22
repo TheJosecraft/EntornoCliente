@@ -1,0 +1,1 @@
+//PARA HACER LA PETICION A MANO entrada={"opcion":"autenticar","user":"administrador","pass":"123"} 

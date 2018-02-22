@@ -29,6 +29,6 @@ function Horoscopo(evento)
 
 function AjaxGet(datos)
 {
-   $("#info").slideUp(function(){$("#info").html(datos);});
-   $("#info").slideDown();
+   $("#info").html(datos);
+
 }

@@ -16,19 +16,17 @@ function Inicio_Ajax()
                    $("#cargando").hide();
                }
       );
-
-      $("p a").click(Horoscopo);
-}
-
-function Horoscopo(evento)
-{
-   var enlace=$(this).attr("href");
-   evento.preventDefault();
-   $.get(enlace, AjaxGet);
+      
+      $.get("http://www.rtve.es/api/noticias.json", AjaxGet);
 }
 
 function AjaxGet(datos)
 {
-   $("#info").slideUp(function(){$("#info").html(datos);});
-   $("#info").slideDown();
+   var lista_noticias=datos["page"]["items"];
+   //array de noticias
+  var texto="";
+for(var i=0;i<lista_noticias.length;i++)
+    texto+="<img src='"+lista_noticias[i]["imageSEO"]+"''>";
+
+   $("#info").html(texto);
 }

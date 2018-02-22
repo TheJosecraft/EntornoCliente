@@ -17,18 +17,26 @@ function Inicio_Ajax()
                }
       );
 
-      $("p a").click(Horoscopo);
+      $("input[type=submit]").click(Horoscopo);
 }
 
 function Horoscopo(evento)
 {
-   var enlace=$(this).attr("href");
    evento.preventDefault();
-   $.get(enlace, AjaxGet);
+   var entrada={};
+   entrada["dia"]=$("#dia").val();
+   entrada["mes"]=$("#mes").val();
+   $.post("horoscopo.php",entrada,AjaxPost);
+
+
 }
 
-function AjaxGet(datos)
+function AjaxPost(datos)
 {
-   $("#info").slideUp(function(){$("#info").html(datos);});
-   $("#info").slideDown();
+   var objeto=JSON.parse(datos);
+
+   if(objeto["estado"])
+   {
+       $("#info").html("<h1>"+objeto["signo"]+"</h1><p>"+objeto["texto"]+"</p>");
+   }
 }

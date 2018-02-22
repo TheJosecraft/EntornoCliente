@@ -17,18 +17,26 @@ function Inicio_Ajax()
                }
       );
 
-      $("p a").click(Horoscopo);
+      $("a").click(CambiarFormu);
 }
 
-function Horoscopo(evento)
+function CambiarFormu(evento)
 {
-   var enlace=$(this).attr("href");
-   evento.preventDefault();
-   $.get(enlace, AjaxGet);
+     evento.preventDefault();
+     if($(this).attr("href")=="registro")
+     {
+        $("#login").slideUp();
+        $("#registro").slideDown();
+     }else{
+        $("#login").slideDown();
+        $("#registro").slideUp();
+     }
 }
 
-function AjaxGet(datos)
+
+
+
+function AjaxPost(datos)
 {
-   $("#info").slideUp(function(){$("#info").html(datos);});
-   $("#info").slideDown();
+  
 }

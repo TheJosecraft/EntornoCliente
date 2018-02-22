@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplo AJAX</title>
+  <link href="estilos.css" rel="StyleSheet" type="text/css">
+  <script src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="usuarios.js"></script>
+</head>
+
+<body>
+
+<div id="contenedor">
+    <h1>Aplicacion Ajax</h1>
+    <form action="usuarios.php" id="autenticar" method="post">
+       <label>Nombre de usuario </label><input type="text" id="user" name="user"><br>
+       <label>Contraseña </label><input type="password" id="pass" name="pass"><br>
+       <input type="submit" value="Entrar" id="entrar"><br>
+       <a href="registro">Crear Nuevo usuario</a>
+    </form>
+    <form id="registro" action="usuarios.php">
+       <label>Crear Nombre de usuario </label><input type="text" id="user" name="user"><br>
+       <label>Crear Contraseña </label><input type="password" id="pass" name="pass"><br>
+       <label>Confirmar Contraseña </label><input type="password" id="repite_pass" name="repite_pass"><br>
+       <input type="submit" value="Registrar" id="crear"><br> 
+       <a href="login">Volver a formulario de entrada</a>
+    </form>
+    <div id="info">Informacion de la aplicacion</div>
+    <div id="cargando">
+      <img src="cargando.gif" width="40px">
+    </div>
+    <hr>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4MkVwZaJCF4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</body>
+</html>

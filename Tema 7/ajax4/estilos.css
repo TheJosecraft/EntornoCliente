@@ -1,0 +1,51 @@
+#info {
+  background-color:#ffc;
+  font-family:verdana;
+  font-size: 1.5em;
+  border-width:0;
+  padding:5px;
+  border: 1px dotted #fa0;
+  margin-left:30%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px #aaa;  
+  width:40%;
+}
+
+#contenedor{
+  width: 70%;
+  background-color: lightblue;
+  margin:auto;
+  text-align: center;
+}
+
+#registro,#login{
+  margin-bottom: 10px;
+}
+
+#registro{
+  display: none;
+}
+
+#registro label,#login label{
+     width:200px;
+     display: inline-block;
+     margin-bottom: 5px;
+     margin-top: 5px;
+}
+#cargando{
+  position:absolute;
+  left:0px;
+  top: 0px;
+  display: none;
+  width:100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#cargando img{
+   position: absolute;
+   display: inline-block;
+   left:40%;
+   top: 30%;
+   width:20%;
+}

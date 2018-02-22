@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplo AJAX</title>
+  <link href="estilos.css" rel="StyleSheet" type="text/css">
+  <script src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="horoscopo.js"></script>
+</head>
+
+<body>
+
+<div id="contenedor">
+    <h1>Signos del horóscopo.</h1>
+    <form id="horoscopo" action="horoscopo.php" method="post">
+       <label>Mes de nacimiento(1 al 12)</label><input type="text" id="mes" size="2" name="mes">
+       <label>Dia de nacimiento</label><input type="text" id="dia" size="2" name="dia">
+       <input type="submit" value="Enviar datos">
+    </form>
+    <div id="info">Introduzca sus datos.</div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4MkVwZaJCF4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div id="cargando">
+  <img src="cargando.gif" width="40px">
+</div>
+ 
+
+</body>
+</html>
