@@ -33,6 +33,7 @@ $(document).ready(function() {
         }, 1000);
     });
 
+
 });
 
 function mostrar(datos) {
@@ -44,7 +45,7 @@ function mostrar(datos) {
         imagen = carta.eq(i).find(".card-img-top");
         titulo = carta.eq(i).find(".card-title");
         contenido = carta.eq(i).find(".card-text").eq(0);
-        enlace = titulo.parent();
+        enlace = carta.eq(i).find("a");
         console.log(imagen);
         console.log(titulo);
         console.log(contenido);
@@ -52,7 +53,7 @@ function mostrar(datos) {
 
         imagen.attr("src", datos[i]["image"]);
         titulo.text(datos[i]["longTitle"]);
-        enlace.attr("href", datos[i]["htmlURL"]);
+        enlace.attr("href", datos[i]["htmlUrl"]);
         contenido.text(datos[i]["summary"]);
     }
 
