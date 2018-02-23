@@ -1,1 +1,17 @@
-main.css
+#cargando {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#cargando img {
+    position: absolute;
+    display: inline-block;
+    left: 40%;
+    top: 30%;
+    width: 20%;
+}
