@@ -46,6 +46,8 @@ function mostrar(datos) {
         titulo = carta.eq(i).find(".card-title");
         contenido = carta.eq(i).find(".card-text").eq(0);
         enlace = carta.eq(i).find("a");
+        fecha = carta.eq(i).find(".text-muted").eq(0);
+
         console.log(imagen);
         console.log(titulo);
         console.log(contenido);
@@ -54,7 +56,8 @@ function mostrar(datos) {
         imagen.attr("src", datos[i]["image"]);
         titulo.text(datos[i]["longTitle"]);
         enlace.attr("href", datos[i]["htmlUrl"]);
-        contenido.text(datos[i]["summary"]);
+        contenido.html(datos[i]["summary"]);
+        fecha.text(datos[i]["publicationDate"])
     }
 
 }
