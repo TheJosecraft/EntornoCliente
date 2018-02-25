@@ -3,6 +3,29 @@ var noticias;
 var indice = 0;
 $(document).ready(function() {
 
+    cargarDatos();
+
+    $(document).ajaxStart(function(){
+        setTimeout(function() {
+            $("#cargando").show();
+        }, 1000);
+    });
+
+    $(document).ajaxStop(function() {
+
+        setTimeout(function() {
+            $("#cargando").hide();
+        }, 1000);
+    });
+
+    $("#mostrar").click(mas);
+    $("#actualizar").click(cargarDatos);
+
+    console.log("Noticias: " + noticias);
+
+});
+
+function cargarDatos(){
     for (var i = 0; i < 3; i++) {
         console.log(carta[0]);
         carta.clone().appendTo("#noticias");
@@ -18,27 +41,7 @@ $(document).ready(function() {
         alert("ERROR");
     });
 
-    $("#mostrar").click(function(event) {
-        event.preventDefault();
-    });
-
-    $(document).ajaxStart(function() {
-        $("#cargando").show();
-
-    });
-
-    $(document).ajaxStop(function() {
-
-        setTimeout(function() {
-            $("#cargando").hide();
-        }, 1000);
-    });
-
-    $("#mostrar").click(mas);
-
-    console.log("Noticias: " + noticias);
-
-});
+};
 
 function mostrar(datos) {
     carta = $(".card");
