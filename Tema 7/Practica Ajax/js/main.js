@@ -1,5 +1,6 @@
 var carta = $(".card");
-var datos;
+var noticias;
+var indice = 0;
 $(document).ready(function() {
 
 	for(var i = 0; i < 3; i++){
@@ -33,12 +34,15 @@ $(document).ready(function() {
         }, 1000);
     });
 
+    $("#mostrar").click(mas);
+
+    console.log("Noticias: " + noticias);
 
 });
 
 function mostrar(datos) {
 	carta = $(".card");
-    console.log(datos);
+	noticias = datos;
 
     for (var i = 0; i < 4; i++) {
         console.log("Mostrar");
@@ -51,11 +55,6 @@ function mostrar(datos) {
 
         console.log(datos[i]["image"]);
 
-        // console.log(imagen);
-        // console.log(titulo);
-        // console.log(contenido);
-        // console.log(enlace);
-
         if(datos[i]["image"] == null){
         	imagen.remove();
         }else{
@@ -66,6 +65,48 @@ function mostrar(datos) {
         enlace.attr("href", datos[i]["htmlUrl"]);
         contenido.html(datos[i]["summary"]);
         fecha.text(datos[i]["publicationDate"])
+        indice++;
+        console.log(indice);
     }
 
+}
+
+function mas(){
+	console.log("Ver más");
+	console.log(noticias);
+	datos = noticias;
+
+	carta = $(".card");
+	
+	for(var i = 0; i < 4; i++){
+    	carta.eq(0).clone().appendTo("#noticias");
+    }
+
+    paginacion();
+}
+
+function paginacion(){
+	for (var i = 0; i < 4; i++) {
+        console.log("Mostrar");
+        console.log("índice: " + indice);
+        console.log("i: " + i);
+        imagen = carta.eq(indice).find(".card-img-top");
+        titulo = carta.eq(indice).find(".card-title");
+        contenido = carta.eq(indice).find(".card-text").eq(0);
+        enlace = carta.eq(indice).find("a");
+        fecha = carta.eq(indice).find(".text-muted").eq(0);
+
+        if(datos[indice]["image"] == null){
+        	imagen.remove();
+        }else{
+        	imagen.attr("src", datos[indice]["image"]);
+        }
+        
+        titulo.text(datos[indice]["longTitle"]);
+        enlace.attr("href", datos[indice]["htmlUrl"]);
+        contenido.html(datos[indice]["summary"]);
+        fecha.text(datos[indice]["publicationDate"])
+        indice++;
+        console.log("Suma índice: " + indice);
+    }
 }
