@@ -3,9 +3,9 @@ var noticias;
 var indice = 0;
 $(document).ready(function() {
 
-	for(var i = 0; i < 3; i++){
-    	console.log(carta[0]);
-    	carta.clone().appendTo("#noticias");
+    for (var i = 0; i < 3; i++) {
+        console.log(carta[0]);
+        carta.clone().appendTo("#noticias");
     }
 
     $.ajax({
@@ -41,8 +41,8 @@ $(document).ready(function() {
 });
 
 function mostrar(datos) {
-	carta = $(".card");
-	noticias = datos;
+    carta = $(".card");
+    noticias = datos;
 
     for (var i = 0; i < 4; i++) {
         console.log("Mostrar");
@@ -55,12 +55,12 @@ function mostrar(datos) {
 
         console.log(datos[i]["image"]);
 
-        if(datos[i]["image"] == null){
-        	imagen.remove();
-        }else{
-        	imagen.attr("src", datos[i]["image"]);
+        if (datos[i]["image"] == null) {
+            imagen.remove();
+        } else {
+            imagen.attr("src", datos[i]["image"]);
         }
-        
+
         titulo.text(datos[i]["longTitle"]);
         enlace.attr("href", datos[i]["htmlUrl"]);
         contenido.html(datos[i]["summary"]);
@@ -71,42 +71,52 @@ function mostrar(datos) {
 
 }
 
-function mas(){
-	console.log("Ver más");
-	console.log(noticias);
-	datos = noticias;
+function mas() {
+    if (indice < noticias.length) {
+        console.log("Ver más");
+        console.log(noticias);
+        datos = noticias;
 
-	carta = $(".card");
-	
-	for(var i = 0; i < 4; i++){
-    	carta.eq(0).clone().appendTo("#noticias");
-    }
+        carta = $(".card");
 
-    paginacion();
-}
-
-function paginacion(){
-	for (var i = 0; i < 4; i++) {
-        console.log("Mostrar");
-        console.log("índice: " + indice);
-        console.log("i: " + i);
-        imagen = carta.eq(indice).find(".card-img-top");
-        titulo = carta.eq(indice).find(".card-title");
-        contenido = carta.eq(indice).find(".card-text").eq(0);
-        enlace = carta.eq(indice).find("a");
-        fecha = carta.eq(indice).find(".text-muted").eq(0);
-
-        if(datos[indice]["image"] == null){
-        	imagen.remove();
-        }else{
-        	imagen.attr("src", datos[indice]["image"]);
+        for (var i = 0; i < 4; i++) {
+            carta.eq(0).clone().appendTo("#noticias");
         }
-        
-        titulo.text(datos[indice]["longTitle"]);
-        enlace.attr("href", datos[indice]["htmlUrl"]);
-        contenido.html(datos[indice]["summary"]);
-        fecha.text(datos[indice]["publicationDate"])
-        indice++;
-        console.log("Suma índice: " + indice);
+
+        carta = $(".card");
+
+        for (var i = 0; i < 4; i++) {
+            console.log("Mostrar");
+            console.log("Índice: " + indice);
+            console.log("i: " + i);
+            imagen = carta.eq(indice).find(".card-img-top");
+            titulo = carta.eq(indice).find(".card-title");
+            contenido = carta.eq(indice).find(".card-text").eq(0);
+            enlace = carta.eq(indice).find("a");
+            fecha = carta.eq(indice).find(".text-muted").eq(0);
+
+            console.log(imagen);
+            console.log(titulo);
+            console.log(contenido);
+            console.log(enlace);
+            console.log(fecha);
+
+            if (datos[indice]["image"] == null) {
+                imagen.remove();
+            } else {
+                imagen.attr("src", datos[indice]["image"]);
+            }
+
+            titulo.text(datos[indice]["longTitle"]);
+            enlace.attr("href", datos[indice]["htmlUrl"]);
+            contenido.html(datos[indice]["summary"]);
+            fecha.text(datos[indice]["publicationDate"])
+            indice++;
+            console.log("Suma índice: " + indice);
+        }
+    }else{
+    	$(this).remove();
+    	$("div.alert").removeClass("d-none").addClass("d-block");
     }
+
 }
