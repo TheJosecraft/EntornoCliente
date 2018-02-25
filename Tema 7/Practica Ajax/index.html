@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Noticias</title>
-	<link rel="stylesheet" href="">
+    <meta charset="UTF-8">
+    <title>Noticias</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-	<a id="mostrar" href="">Cargar datos</a>
-	<div id="info"></div>
+    <div id="cargando">
+        <img src="cargando.gif" width="40px">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Noticias</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" id="noticias">
+                <div class="card mb-3">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <a href=""><h5 class="card-title">Card title</h5></a>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="mostrar" class="btn btn-primary btn-lg btn-block mb-3" href="">Ver más</button>
+    </div>
+    <div id="info"></div>
 </body>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
 </html>
