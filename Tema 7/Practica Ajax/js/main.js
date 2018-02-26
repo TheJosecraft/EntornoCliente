@@ -1,4 +1,5 @@
 var carta = $(".card");
+var copiaCarta;
 var noticias;
 var indice = 0;
 $(document).ready(function() {
@@ -7,19 +8,19 @@ $(document).ready(function() {
 
     $(document).ajaxStart(function(){
         setTimeout(function() {
-            $("#cargando").show();
-        }, 1000);
+            $("#cargando").show().addClass("d-flex");
+        });
     });
 
     $(document).ajaxStop(function() {
 
         setTimeout(function() {
-            $("#cargando").hide();
+            $("#cargando").hide().removeClass("d-flex");
         }, 1000);
     });
 
     $("#mostrar").click(mas);
-    $("#actualizar").click(cargarDatos);
+    $("#actualizar").click(actualizarDatos);
 
     console.log("Noticias: " + noticias);
 
@@ -29,6 +30,30 @@ function cargarDatos(){
     for (var i = 0; i < 3; i++) {
         console.log(carta[0]);
         carta.clone().appendTo("#noticias");
+    }
+
+    $.ajax({
+        url: 'http://www.rtve.es/api/noticias.json',
+        type: 'GET',
+        dataType: 'json'
+    }).done(function(json) {
+        mostrar(json["page"]["items"]);
+    }).fail(function() {
+        alert("ERROR");
+    });
+
+};
+
+function actualizarDatos(){
+    copiaCarta = $(".card").eq(0);
+    $("#noticias").empty();
+    indice = 0;
+
+    console.log("Copia: " + copiaCarta)
+
+    for (var i = 0; i < 4; i++) {
+        console.log(carta[0]);
+        copiaCarta.clone().appendTo("#noticias");
     }
 
     $.ajax({
